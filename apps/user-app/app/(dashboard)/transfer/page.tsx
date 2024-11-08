@@ -23,6 +23,8 @@ async function getOnRampTransactions() {
     const txns = await prisma.onRampTransaction.findMany({
         where: {
             userId: Number(session?.user?.id)
+
+            
         }
     });
     return txns.map((t:any) => ({
